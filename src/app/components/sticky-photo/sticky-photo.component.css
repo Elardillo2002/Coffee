@@ -1,0 +1,41 @@
+div {
+    min-height: 565px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div div {
+    position: relative;
+    top: 300px;
+    left: 50%;
+    width: 65%;
+    min-height: 300px;
+    transform: translate(-50%, -50%);
+    background-color: #e6b58b82;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+h2 {
+    padding: 13vh 0 3vh;
+}
+
+a {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border: 0.5px solid #9a5833;
+    border-radius: 10px;
+    background-color: #9a5833;
+}
+
+a:hover, a:active {
+    border: 1px solid white;
+}
+
+#home {
+    background-image: url("../../../assets/images/General2.jpg");
+}

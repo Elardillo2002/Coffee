@@ -1,0 +1,35 @@
+section {
+    text-align: center;
+    padding: 6vh 0;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+p {
+    line-height: 10px;
+}
+
+div {
+    font-size: 25px;
+    margin-top: 5vh;
+    border: 1px solid #e6b68b;
+    width: 10rem;
+    height: 10rem;
+    box-sizing: border-box;
+    transform: rotate(-45deg);
+}
+
+div p {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+}
+
+article:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

@@ -1,0 +1,34 @@
+section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border: 3px solid #ac7b51;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+td, th {
+    font-size: 20px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ac7b51;
+}
+
+th {
+    text-align: center;
+}
+
+td:nth-child(1) {
+    border-right: 1px solid #ac7b51
+}
+
+tr:nth-child(2n+1) {
+    background-color: #e6bf9c;
+}
+
+tr:last-of-type td {
+    border-bottom: none;
+}
