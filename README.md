@@ -3,7 +3,10 @@ Instalamos nvm en el ordenador: https://github.com/coreybutler/nvm-windows/relea
 
 # GIT
 ## Importar directorio en máquina local la primera vez
-> git clone https://github.com/Elardillo2002/Angular
+> git clone https://github.com/Elardillo2002/Coffee
+
+## Exportar por primera vez
+>git remote add origin https://github.com/Elardillo2002/Coffee
 
 ## Actualizar cambios de otros (main)
 
@@ -24,7 +27,7 @@ Y más tarde instalar las dependencias del proyecto, almacenadas en el directori
 > npm i -g @angular/cli@16.2.12
 
 Nuevo proyecto
-> ng new Angular
+> ng new Coffee
 
 # INICIAR PROYECTO
 > cd Angular /

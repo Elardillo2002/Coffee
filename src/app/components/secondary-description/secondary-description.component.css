@@ -1,0 +1,29 @@
+div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    background-color: #cd966c;
+}
+
+img {
+    grid-row: 1 / -1;
+    margin:  30px;
+}
+
+h5 {
+    font-size: 25px;
+}
+
+a {
+    margin: 0 auto;
+    width: 15%;
+    min-width: 60px;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border: 0.5px solid #9a5833;
+    border-radius: 10px;
+    background-color: #9a5833;
+}

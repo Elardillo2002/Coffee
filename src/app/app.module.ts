@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CafeteriaComponent } from './components/cafeteria/cafeteria.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { JsonReaderComponent } from './components/json-reader/json-reader.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     HomeComponent,
     CafeteriaComponent,
     MenuComponent,
-    ContactoComponent
+    ContactoComponent,
+    JsonReaderComponent
   ],
   imports: [
     BrowserModule,
