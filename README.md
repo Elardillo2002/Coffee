@@ -14,11 +14,11 @@ Instalamos nvm en el ordenador: https://github.com/coreybutler/nvm-windows/relea
 
 ## Actualizar cambios propios (main)
 
-> git fetch origin main
-> git merge origin/main
+> git fetch origin master
+> git merge origin/master
 > git add .
 > git commit -m "commit"
-> git push origin main
+> git push origin master
 
 Y más tarde instalar las dependencias del proyecto, almacenadas en el directorio node_modules, que con Git no se instalan.
 > npm install
