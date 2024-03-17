@@ -11,22 +11,35 @@ article div {
 article:last-of-type {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
 }
 
-div {
-    font-size: 25px;
-    margin-top: 10vh;
+.circle {
     border: 2px solid #e6b68b;
+    background-color: #e6b68b;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    transform: translateY(20%);
+}
+
+.diamond {
+    border: 4px solid #e6b68b;
+    background-color: white;
     width: 8rem;
     height: 8rem;
-    box-sizing: border-box;
-    transform: rotate(-45deg);
+    transform: translateY(8%) rotate(45deg);
 }
 
 div p {
+    font-size: 50px;
     position: relative;
-    transform: translate(150rem, 150px);
-    transform: rotate(45deg);
+    transform: translate(-2%, -30%) rotate(-45deg);
+}
+
+div + p {
+    font-size: 25px;
 }
 
 h3 {
@@ -35,4 +48,5 @@ h3 {
 
 p {
     line-height: 10px;
+    grid-row-start: 2;
 }

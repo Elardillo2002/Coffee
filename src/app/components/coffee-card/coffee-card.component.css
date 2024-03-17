@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 380px;
+    border: 3px solid #9a5833;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e6b68b;
+    clip-path: circle(150px at 80% 20%);
+    z-index: -2;
+}
+
+.card:after {
+    content: 'Privé';
+    position: absolute;
+    top: 15%;
+    left: -9%;
+    font-size: 13em;
+    font-weight: 800;
+    font-family: "Whisper", cursive;;
+    color: #c5620482;
+    z-index: -1;
+}
+
+.imgBx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    height: 220px;
+    transition: 1s;
+}
+
+.card:hover .imgBx {
+    top: 0;
+    transform: translateY(0%);
+}
+
+img {
+    position: absolute;
+    top: 50%;
+    transform: translate(60%, -50%);
+    width: 150px;
+}
+
+.contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1.5s;
+    color: #9a5833;
+}
+
+.card:hover .contentBx {
+    height: 170px;
+}
+
+.ingredients {
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+    cursor: default;
+    user-select: none;
+}
+
+.card:hover .ingredients {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+.ingredients h3 {
+    color: #9a5833;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 2px;
+}

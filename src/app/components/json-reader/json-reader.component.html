@@ -1,1 +1,6 @@
-<p> {{ menu }}</p>
+<h3>Menú del día {{ menu.date }}:</h3>
+<ul>
+  <li *ngFor="let plato of menu.dish">
+    {{ plato.name }} - {{ plato.price }} €
+  </li>
+</ul>

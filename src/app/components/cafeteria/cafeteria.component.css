@@ -1,0 +1,12 @@
+section:nth-child(2) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 6vh 0;
+    row-gap: 4vh;
+}
+
+app-coffee-card {
+    width: 80%;
+    display: grid;
+    justify-content: center;
+}

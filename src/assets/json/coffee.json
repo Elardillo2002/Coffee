@@ -1,71 +1,24 @@
 {
-	"menu": {
-		"Lunes": {
-            "Primer plato": "Garbanzos con gulas",
-            "Segundo plato": "Calabín relleno de atún",
-            "Poke": "Pasta con atún"
-        },
-        "Martes": {
-            "Primer plato": "Espinacas y mejillones",
-            "Segundo plato": "Huevo y queso azul con patatas",
-            "Poke": "Arroz con pollo"
-        },
-        "Miércoles": {
-            "Primer plato": "Alubias blancas",
-            "Segundo plato": "Merluza con ensalada",
-            "Poke": "Quinoa Vegetal"
-        },
-        "Jueves": {
-            "Primer plato": "Mix de setas y jamón",
-            "Segundo plato": "Patatas, arroz y alcachofas",
-            "Poke": "Lechuga con pollo"
-        },
-        "Viernes": {
-            "Primer plato": "Ñoquis con salsa de tomate natural",
-            "Segundo plato": "Panceta frita con aros de cebolla",
-            "Poke": "Pasta vegetal"
-        }
-    }, 
-    "cafeteria": [
-        {
-            "nombre": "Café solo",
-            "descripcion": "Un café simple y fuerte, similar al espresso italiano",
-            "ingredientes": "Café"
-        },
-        {
-            "nombre": "Café cortado",
-            "descripcion": "Un café solo con un toque de leche, más corto que un café con leche",
-            "ingredientes": "Café y un poco de leche"
-        },
-        {
-            "nombre": "Café con Leche",
-            "descripcion": "Café mezclado con una cantidad igual de leche, resultando en una bebida más suave",
-            "ingredientes": "Café solo con una cantidad igual de leche"
-        },
-        {
-            "nombre": "Café Americano",
-            "descripcion": "Un café más diluido, similar al americano, hecho agregando agua caliente al café",
-            "ingredientes": "Café solo con agua caliente"
-        },
-        {
-            "nombre": "Café Bombón",
-            "descripcion": "Café solo con leche condensada, creando una bebida dulce y densa",
-            "ingredientes": "Café solo con leche condensada"
-        },
-        {
-            "nombre": "Café Carajillo",
-            "descripcion": "Café solo con licor, a menudo brandy o ron, dando un toque alcohólico",
-            "ingredientes": "Café solo con licor"
-        },
-        {
-            "nombre": "Café Manchado",
-            "descripcion": "Café solo con un toque de leche, más fuerte que un café con leche",
-            "ingredientes": "Café solo con un poco de leche"
-        },
-        {
-            "nombre": "Café de Olla",
-            "descripcion": "Café infusionado con especias como canela y piloncillo, típico en algunas regiones",
-            "ingredientes": "Café, canela, piloncillo (azúcar de caña sin refinar)"
-        }
-    ]
+    "menu": {
+        "id_menu": 1,
+        "date": "2024-03-14",
+        "dish": [
+            {
+                "name": "Garbanzos con gulas",
+                "price": 3.2
+            },
+            {
+                "name": "Calabín relleno de atún",
+                "price": 4.1
+            },
+            {
+                "name": "Poke de arroz con pollo",
+                "price": 1.5
+            },
+            {
+                "name": "Ensalada de arroz",
+                "price": 2.6
+            }
+        ]
+    }
 }

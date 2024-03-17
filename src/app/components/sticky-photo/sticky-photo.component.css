@@ -20,7 +20,11 @@ div div {
 }
 
 h2 {
-    padding: 13vh 0 3vh;
+    font-family: "Whisper", cursive;
+    font-size: 3em;
+    letter-spacing: 2px;
+    padding: 10vh 0 0 2vh;
+    color: black;
 }
 
 a {
@@ -42,4 +46,8 @@ a:hover, a:active {
 
 #cafeteria {
     background-image: url("../../../assets/images/General1.jpg");
+}
+
+#menu {
+    background-image: url("../../../assets/images/Restaurant.jpg");
 }

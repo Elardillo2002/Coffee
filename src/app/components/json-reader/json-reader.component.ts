@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+interface Menu {
+    id_menu: number;
+    date: string;
+    dish: { name: string, price: number }[];
+  }
 
 @Component({
   selector: 'app-json-reader',
@@ -6,32 +12,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./json-reader.component.css']
 })
 
-export class JsonReaderComponent {
-    menu: any;
-    
+export class JsonReaderComponent implements OnInit {
+    menu: Menu = {
+        id_menu: 0,
+        date: '',
+        dish: []
+      };    
 
     ngOnInit() {
-        console.log("hola");
-        this.ajax();
+        this.loadData()
+            .then(menu => {
+                this.menu = menu;
+            });
     }
 
-    ajax() {
-        var success: (data: any) => void;
-        var data: any;
-        const conexion = new XMLHttpRequest();
+    loadData(): Promise<Menu> {
+        return new Promise((resolve, reject) => {
+            const conection = new XMLHttpRequest();
 
-        success = (response: any) => {
-            console.log("Respuesta exitosa: ", response);
-            this.menu = response.menu;
-        }
+            conection.addEventListener("load", () => {
+                if (conection.status >= 200 && conection.status < 300) {
+                    const menu = JSON.parse(conection.response) as Menu;
+                    resolve(menu);
+                }
+            });
 
-        conexion.addEventListener("load", () => {
-            if (conexion.status >= 200 && conexion.status < 300) {
-                success(JSON.parse(conexion.response));
-            }
+            conection.addEventListener("error", (error) => {
+                reject(error);
+            });
+
+            conection.open("GET", "http://localhost:3000/menu", true);
+            conection.send();
         });
-
-        conexion.open("GET", "http://localhost:3000/", true);
-        conexion.send(JSON.stringify(data));
     }
 }

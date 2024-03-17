@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sticky-photo',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class StickyPhotoComponent {
-  src = "home";
+  @Input() src: string = "home";
 }
