@@ -1,6 +1,78 @@
-<h3>Menú del día {{ menu.date }}:</h3>
-<ul>
-  <li *ngFor="let plato of menu.dish">
-    {{ plato.name }} - {{ plato.price }} €
-  </li>
-</ul>
+<section>
+    <article>
+        <h3>Menú del día</h3>
+        <form>
+            <input type="date" name="date">
+        </form>
+    </article>
+    <article>
+        <div *ngFor="let item of menu.First; let i = index">
+            <div>
+                <img [src]="'../../../assets/images/First ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
+                <hr>
+            </div>
+            <div>
+                <p>{{ item.name }} </p>
+                <p>{{ item.price }} €</p>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div *ngFor="let item of menu.Second; let i = index">
+            <div>
+                <img [src]="'../../../assets/images/Second ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
+                <hr>
+            </div>
+            <div>
+                <p>{{ item.name }} </p>
+                <p>{{ item.price }} €</p>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div *ngFor="let item of menu.Poke; let i = index">
+            <div>
+                <img [src]="'../../../assets/images/Poke ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
+                <hr>
+            </div>
+            <div>
+                <p>{{ item.name }} </p>
+                <p>{{ item.price }} €</p>
+            </div>
+        </div>
+    </article>
+</section>
+
+<!-- 
+    ,
+        {
+            "name": "Quinoa vegetal",
+            "price": 2.00,
+            "date": "2024-03-16"
+        },
+        {
+            "name": "Quinoa con atún",
+            "price": 2.00,
+            "date": "2024-03-16"
+        },
+        {
+            "name": "Quinoa con pollo",
+            "price": 2.00,
+            "date": "2024-03-16"
+        },
+        {
+            "name": "Lechuga vegetal",
+            "price": 2.00,
+            "date": "2024-03-17"
+        },
+        {
+            "name": "Lechuga con atún",
+            "price": 2.00,
+            "date": "2024-03-17"
+        },
+        {
+            "name": "Lechuga con pollo",
+            "price": 2.00,
+            "date": "2024-03-17"
+        }
+ -->

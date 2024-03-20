@@ -11,9 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { CafeteriaComponent } from './components/cafeteria/cafeteria.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { ContactoComponent } from './components/contacto/contacto.component';
 import { JsonReaderComponent } from './components/json-reader/json-reader.component';
 import { CoffeeCardComponent } from './components/coffee-card/coffee-card.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,9 @@ import { CoffeeCardComponent } from './components/coffee-card/coffee-card.compon
     HomeComponent,
     CafeteriaComponent,
     MenuComponent,
-    ContactoComponent,
     JsonReaderComponent,
-    CoffeeCardComponent
+    CoffeeCardComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

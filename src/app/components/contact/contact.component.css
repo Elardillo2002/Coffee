@@ -1,0 +1,67 @@
+main {
+    background-color: #e6b68b;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+}
+
+h3 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 5vh;
+}
+
+table {
+    border: 3px solid #ac7b51;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+tr {
+    background-color: white;
+}
+
+td, th {
+    font-size: 20px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ac7b51;
+}
+
+th {
+    text-align: center;
+}
+
+td:nth-child(1) {
+    border-right: 1px solid #ac7b51
+}
+
+tr:nth-child(2n+1) {
+    background-color: #e6bf9c;
+}
+
+tr:last-of-type td {
+    border-bottom: none;
+}
+
+form {
+    display: grid;
+    row-gap: 1vh;
+}
+
+label {
+    user-select: none;
+}
+
+label, input {
+    font-size: 18px;
+}
+
+input[type=submit] {
+    width: 150px;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover {
+    background-color: #e6b68b;
+    color: white;
+}

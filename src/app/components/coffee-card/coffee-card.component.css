@@ -26,7 +26,7 @@
     left: -9%;
     font-size: 13em;
     font-weight: 800;
-    font-family: "Whisper", cursive;;
+    font-family: "Whisper", cursive;
     color: #c5620482;
     z-index: -1;
 }
@@ -35,7 +35,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-60%);
-    height: 220px;
+    height: 250px;
     transition: 1s;
 }
 
@@ -62,7 +62,7 @@ img {
 }
 
 .card:hover .contentBx {
-    height: 170px;
+    height: 140px;
 }
 
 .ingredients {
