@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class StickyPhotoComponent {
-  @Input() src: string = "home";
+  @Input() src: string = "home"; // Takes "src" from components who calls it.
 }

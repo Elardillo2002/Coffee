@@ -1,0 +1,21 @@
+main {
+    text-align: center;
+    margin-top: 18vh;
+}
+
+form {
+    display: grid;
+    row-gap: 20px;
+    justify-content: center;
+}
+
+input {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+}

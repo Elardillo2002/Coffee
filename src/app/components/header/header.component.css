@@ -14,16 +14,18 @@ section:first-of-type {
 
 section:last-of-type {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     text-align: center;
 }
 
 a {
+    cursor: default;
     text-decoration: none;
     color: black;
 }
 
-a:hover, a:active {
+span:hover, span:active {
+    cursor: pointer;
     color: white;
 }
 

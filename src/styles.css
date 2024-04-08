@@ -19,3 +19,9 @@ footer {
     background-color: #9a5833;
     padding: 10px;
 }
+
+.notFullPage {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

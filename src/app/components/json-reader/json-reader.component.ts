@@ -54,7 +54,7 @@ export class JsonReaderComponent implements OnInit {
     }
 
     loadData(url: string): Promise<MenuItem[]> {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const conection = new XMLHttpRequest();
 
             conection.addEventListener("load", () => {
@@ -62,10 +62,6 @@ export class JsonReaderComponent implements OnInit {
                     const menu = JSON.parse(conection.response) as MenuItem[];
                     resolve(menu);
                 }
-            });
-
-            conection.addEventListener("error", (error) => {
-                reject(error);
             });
 
             conection.open("GET", url, true);

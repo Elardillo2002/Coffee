@@ -1,0 +1,33 @@
+div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 21px 21px;
+    margin: 0 7%;
+    column-gap: 1%;
+    height: 56px;
+}
+
+h3 {
+    font-family: "Whisper", cursive;
+    text-align: center;
+    font-size: 40px;
+    grid-column: 1 / -1;
+}
+
+p {
+    font-size: 18px;
+}
+
+p:nth-child(4),
+p:nth-child(5) {
+    font-size: 20px;
+}
+
+div:not(:last-of-type) {
+    border-bottom: 1px solid lightgray;
+}
+
+input {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    border: none;
+}
