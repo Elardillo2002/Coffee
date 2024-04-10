@@ -1,0 +1,82 @@
+{
+    "accountSettings": {
+        "accountAccess": "Acceso a cuenta",
+        "access": "Acceso",
+        "send": "Enviar",
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "message": "Mensaje",
+        "user": "Usuario",
+        "password": "Contraseña",
+        "exampleName": "Eduardo",
+        "exampleEmail": "ejemplo@gmail.com",
+        "examplePhone": "666 777 888"
+    },
+    
+    "capital": {
+        "home": "INICIO",
+        "cafeteria": "CAFETERÍA",
+        "ingredients": "INGREDIENTES",
+        "coffee": "CAFÉ",
+        "menu": "MENÚ",
+        "terrace": "TERRAZA",
+        "contact": "CONTACTO",
+        "RRSS": "REDES SOCIALES",
+        "aboutUs": "SOBRE NOSOTROS",
+        "logOut": "CERRAR SESIÓN"
+    },
+
+    "cafeteria": {
+        "ourCoffees": "Nuestros cafés",
+        "menu": "Menú",
+        "cafeteria": "Cafetería",
+        "slogan": "PEQUEÑOS PLATOS, GRANDES PLACERES",
+        "sentence1": "Cada mañana, el café se convierte en nuestro cómplice silencioso, despertando los sentidos con su aroma inconfundible.",
+        "sentence2": "En cada sorbo, encuentramos consuelo y una pausa necesaria para comenzar el día con energía y calidez.",
+        "menuEditing": "Edición de menús",
+        "dishName": "Nombre del plato",
+        "serviceDate": "Fecha de servicio",
+        "price": "Precio",
+        "credentials": {
+            "part1": "Necesita",
+            "part2": "proporcionar credenciales",
+            "part3": "para acceder a este apartado"
+        },
+        "dailyMenu": "Menú del día",
+        "tasteCoffees": "Prueba nuestros cafés"
+    },
+
+    "schedule": {
+        "schedule": "Horario",
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado",
+        "sunday": "Domingo",
+        "openingHours": "8:00 - 18:00 horas",
+        "closed": "Cerrado"
+    },
+    
+    "pageNavigation": {
+        "404": "Error 404. Página no encontrada",
+        "returnHome": "Volver a inicio"
+    },
+
+    "coffeeTypes": {
+        "espresso": "solo",
+        "macchiato": "cortado",
+        "withMilk": "con leche",
+        "americano": "americano",
+        "bombon": "bombón",
+        "cappuccino": "cappuccino",
+        "carajillo": "carajillo",
+        "coffee": "Café",
+        "milk": "Café, Leche",
+        "brandy": "Café, Brandy, Azúcar",
+        "condensedMilk": "Café, Leche condensada",
+        "hotWater": "Café, Agua caliente"
+    }
+}

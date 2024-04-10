@@ -1,0 +1,82 @@
+{
+    "accountSettings": {
+        "accountAccess": "Account access",
+        "access": "Access",
+        "send": "Send",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number",
+        "message": "Message",
+        "user": "User",
+        "password": "Password",
+        "exampleName": "Ashley",
+        "exampleEmail": "example@gmail.com",
+        "examplePhone": "469-884-4701"
+    },
+    
+    "capital": {
+        "home": "HOME",
+        "cafeteria": "CAFETERIA",
+        "ingredients": "INGREDIENTS",
+        "coffee": "CAFE",
+        "menu": "MENU",
+        "terrace": "TERRACE",
+        "contact": "CONTACT",
+        "RRSS": "SOCIAL NETWORKS",
+        "aboutUs": "ABOUT US",
+        "logOut": "LOG OUT"
+    },
+
+    "cafeteria": {
+        "ourCoffees": "Our coffees",
+        "menu": "Menu",
+        "cafeteria": "Cafeteria",
+        "slogan": "LITTLE DISHES, GREAT PLEASURES",
+        "sentence1": "Every morning, coffee becomes our silent accomplice, awakening our senses with its unmistakable aroma.",
+        "sentence2": "In each sip, we find comfort and a necessary pause to start the day with energy and warmth.",
+        "menuEditing": "Menu editing",
+        "dishName": "Dish name",
+        "serviceDate": "Service date",
+        "price": "Price",
+        "credentials": {
+            "part1": "You need to",
+            "part2": "provide credentials",
+            "part3": "to access this section"
+        },
+        "dailyMenu": "Daily menu",
+        "tasteCoffees": "Taste our coffees"
+    },
+
+    "schedule": {
+        "schedule": "Schedule",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "openingHours": "8:00 a.m. - 6:00 p.m.",
+        "closed": "Closed"
+    },
+    
+    "pageNavigation": {
+        "404": "404 Page not found",
+        "returnHome": "Return home"
+    },
+
+    "coffeeTypes": {
+        "espresso": "espresso",
+        "macchiato": "macchiato",
+        "withMilk": "latte",
+        "americano": "americano",
+        "bombon": "bombón",
+        "cappuccino": "cappuccino",
+        "carajillo": "carajillo",
+        "coffee": "Coffee",
+        "milk": "Coffee, Milk",
+        "brandy": "Coffee, Brandy, Sugar",
+        "condensedMilk": "Coffee, Condensed milk",
+        "hotWater": "Coffee, Hot water"
+    }
+}

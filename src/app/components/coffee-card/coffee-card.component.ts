@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 interface Coffee {
     name: string;
     ingredients: string;
+    src: string;
 }
 
 @Component({
@@ -14,6 +15,7 @@ interface Coffee {
 export class CoffeeCardComponent {
     @Input() coffee: Coffee = {
         name: "",
-        ingredients: ""
+        ingredients: "",
+        src: ""
     };
 }

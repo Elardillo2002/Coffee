@@ -1,11 +1,11 @@
 <app-header></app-header>
 <main *ngIf="adminCookie">
     <section *ngIf="!editMode">
-        <h3>Edición de menús</h3>
+        <h3>{{ "cafeteria.menuEditing" | translate }}</h3>
         <div>
-            <p><b> Nombre del plato </b></p>
-            <p><b> Fecha de servicio </b></p>
-            <p><b> Coste </b></p>
+            <p><b> {{ "cafeteria.dishName" | translate }} </b></p>
+            <p><b> {{ "cafeteria.serviceDate" | translate }} </b></p>
+            <p><b> {{ "cafeteria.price" | translate }} </b></p>
             <p> </p>
             <p (click)="edit()"><i class="fa-solid fa-pencil" style="color: black;"></i></p>
         </div>
@@ -26,11 +26,11 @@
         </div>
     </section>
     <section *ngIf="editMode">
-        <h3>Edición de menús</h3>
+        <h3>{{ "cafeteria.menuEditing" | translate }}</h3>
         <div>
-            <p><b> Nombre del plato </b></p>
-            <p><b> Fecha de servicio </b></p>
-            <p><b> Coste </b></p>
+            <p><b> {{ "cafeteria.dishName" | translate }} </b></p>
+            <p><b> {{ "cafeteria.serviceDate" | translate }} </b></p>
+            <p><b> {{ "cafeteria.price" | translate }} </b></p>
             <p (click)="saveChanges()"><i class="fa-solid fa-circle-check" style="color: #63e6be;"></i></p>
             <p (click)="cancelEdit()"><i class="fa-solid fa-circle-xmark" style="color: #ff513d;"></i></p>
         </div>
@@ -52,6 +52,7 @@
     </section>
 </main>
 <main *ngIf="!adminCookie">
-    <p> Necesita <a routerLink="/backoffice">proporcionar credenciales</a> para acceder a este apartado </p>    
+    <p> {{ "cafeteria.credentials.part1" | translate }} <a routerLink="/backoffice">{{ "cafeteria.credentials.part2" | translate }}</a> {{ "cafeteria.credentials.part3" | translate }} </p>    
 </main>
-<app-footer></app-footer>
+<app-footer *ngIf="adminCookie"></app-footer>
+<app-footer *ngIf="!adminCookie" class="notFullPage"></app-footer>

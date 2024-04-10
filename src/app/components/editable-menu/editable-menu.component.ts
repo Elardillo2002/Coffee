@@ -21,7 +21,7 @@ interface MenuType {
 
 export class EditableMenuComponent implements OnInit {
     adminCookie: boolean = false;
-    editMode: boolean = true;
+    editMode: boolean = false;
     editItem: MenuItem | null = null;
 
     urlFirst: string = "http://localhost:3000/First";

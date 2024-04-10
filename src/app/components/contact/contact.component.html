@@ -2,33 +2,33 @@
 <main>
     <section>
         <table>
-            <tr><th colspan="2">Horario</th></tr>
-            <tr><td>Lunes:</td><td>8:00 - 18:00</td></tr>
-            <tr><td>Martes:</td><td>8:00 - 18:00</td></tr>
-            <tr><td>Miércoles:</td><td>8:00 - 18:00</td></tr>
-            <tr><td>Jueves:</td><td>8:00 - 18:00</td></tr>
-            <tr><td>Viernes:</td><td>8:00 - 18:00</td></tr>
-            <tr><td>Sábado:</td><td>Cerrado</td></tr>
-            <tr><td>Domingo:</td><td>Cerrado</td></tr>
+            <tr><th colspan="2">{{ "schedule.schedule" | translate }}</th></tr>
+            <tr><td>{{ "schedule.monday" | translate }}:</td><td>{{ "schedule.openingHours" | translate }}</td></tr>
+            <tr><td>{{ "schedule.tuesday" | translate }}:</td><td>{{ "schedule.openingHours" | translate }}</td></tr>
+            <tr><td>{{ "schedule.wednesday" | translate }}:</td><td>{{ "schedule.openingHours" | translate }}</td></tr>
+            <tr><td>{{ "schedule.thursday" | translate }}:</td><td>{{ "schedule.openingHours" | translate }}</td></tr>
+            <tr><td>{{ "schedule.friday" | translate }}:</td><td>{{ "schedule.openingHours" | translate }}</td></tr>
+            <tr><td>{{ "schedule.saturday" | translate }}:</td><td>{{ "schedule.closed" | translate }}</td></tr>
+            <tr><td>{{ "schedule.sunday" | translate }}:</td><td>{{ "schedule.closed" | translate }}</td></tr>
         </table>
     </section>
     <section>
-            <h3> CONTACTO </h3>
+            <h3> {{ "capital.contact" | translate }} </h3>
             <p><i class="fa-solid fa-location-dot" style="color: black"></i> C. de Enrique Cubero, 9, 47014 Valladolid </p>
-            <p><i class="fa-solid fa-phone" style="color: black"></i> 616 443 219 </p>
+            <p><i class="fa-solid fa-phone" style="color: black"></i> +34 616 443 219 </p>
             <p><i class="fa-solid fa-envelope" style="color: black"></i> info@priveeventos.com </p>
     </section>
     <section>
         <form>
-            <label for="name"> Nombre: </label>
-            <input type="text" name="name" id="name" placeholder="Martín" required>
-            <label for="email"> Correo electrónico: </label>
-            <input type="email" name="email" id="email" placeholder="ejemplo@gmail.com" required>
-            <label for="phone"> Teléfono: </label>
-            <input type="tel" name="phone" id="phone" placeholder="666 777 888" required>
-            <label for="message"> Mensaje: </label>
+            <label for="name"> {{ "accountSettings.name" | translate }}: </label>
+            <input type="text" name="name" id="name" [placeholder]=" 'accountSettings.exampleName' | translate " required>
+            <label for="email"> {{ "accountSettings.email" | translate }}: </label>
+            <input type="email" name="email" id="email" [placeholder]=" 'accountSettings.exampleEmail' | translate " required>
+            <label for="phone"> {{ "accountSettings.phone" | translate }}: </label>
+            <input type="tel" name="phone" id="phone" [placeholder]=" 'accountSettings.examplePhone' | translate " required>
+            <label for="message"> {{ "accountSettings.message" | translate }}: </label>
             <textarea name="message" id="message" rows="10" required></textarea>
-            <input type="submit" value="Enviar">
+            <input type="submit" [value]=" 'accountSettings.send' | translate ">
         </form>
     </section>
 </main>

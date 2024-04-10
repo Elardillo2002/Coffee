@@ -5,12 +5,11 @@
         </a>
             <h1> MePrivé Gastrobar </h1>
     </section>
-    <!-- TODO: Add BackOffice -->
     <section>
-        <a routerLink="/home"><span> HOME </span></a>
-        <a routerLink="/cafeteria"><span> CAFETERÍA </span></a>
-        <a routerLink="/menu"><span> MENÚ </span></a>
-        <a routerLink="/contact"><span> CONTACTO </span></a>
+        <a routerLink="/home"><span> {{ "capital.home" | translate }} </span></a>
+        <a routerLink="/cafeteria"><span> {{ "capital.cafeteria" | translate }} </span></a>
+        <a routerLink="/menu"><span> {{ "capital.menu" | translate }} </span></a>
+        <a routerLink="/contact"><span> {{ "capital.contact" | translate }} </span></a>
         <app-logout></app-logout>
     </section>
 </header>

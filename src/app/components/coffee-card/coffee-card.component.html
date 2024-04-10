@@ -1,13 +1,13 @@
 <article>
     <div class="card">
         <div class="imgBx">
-            <img src="../../../assets/images/{{ coffee.name }}.png" alt="Café {{ coffee.name }}">
+            <img src="../../../assets/images/{{ coffee.src }}.png" alt="{{ coffee.name | translate }}">
         </div>
         <div class="contentBx">
-            <h2> Café {{ coffee.name }} </h2>
+            <h2> {{ "coffeeTypes.coffee" | translate }} {{ coffee.name | translate }} </h2>
             <div class="ingredients">
-                <h3> INGREDIENTES </h3>
-                <span> {{ coffee.ingredients }} </span>
+                <h3> {{ "capital.ingredients" | translate }} </h3>
+                <span> {{ coffee.ingredients | translate }} </span>
             </div>
         </div>
     </div>

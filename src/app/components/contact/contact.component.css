@@ -3,6 +3,7 @@ main {
     padding: 5%;
     display: grid;
     grid-template-columns: 0.5fr 0.5fr 1fr;
+    column-gap: 1%;
 }
 
 h3 {

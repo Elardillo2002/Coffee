@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,6 +23,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { FormsModule } from '@angular/forms';
 import { EditableMenuComponent } from './components/editable-menu/editable-menu.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { LanguageComponent } from './components/language/language.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +42,27 @@ import { LogoutComponent } from './components/logout/logout.component';
     BackOfficeComponent,
     NotFoundPageComponent,
     EditableMenuComponent,
-    LogoutComponent
+    LogoutComponent,
+    LanguageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule // For ngModel use
+    FormsModule, // For ngModel use
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/languages/', '.json');
+}
