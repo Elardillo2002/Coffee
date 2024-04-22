@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'src/app/services/cookie.service';
 
 interface MenuItem {
+    id: number,
     name: string,
     price: number,
     date: string
 }
 
 interface MenuType {
-    First: MenuItem[];
-    Second: MenuItem[];
-    Poke: MenuItem[];
+    first: MenuItem[];
+    second: MenuItem[];
+    poke: MenuItem[];
 }
 
 @Component({
@@ -28,15 +29,19 @@ export class EditableMenuComponent implements OnInit {
     urlSecond: string = "http://localhost:3000/Second";
     urlPoke: string = "http://localhost:3000/Poke";
 
+    originalMenu: MenuType = {
+        first: [],
+        second: [],
+        poke: []
+    };
+
     menu: MenuType = {
-        First: [],
-        Second: [],
-        Poke: []
+        first: [],
+        second: [],
+        poke: []
       };    
 
-    constructor(
-        private cookieService: CookieService
-    ) { }
+    constructor(private cookieService: CookieService) { }
 
     ngOnInit(): void {
         this.adminCookie = this.cookieService.checkCookie("admin");
@@ -44,21 +49,22 @@ export class EditableMenuComponent implements OnInit {
         if (this.adminCookie) {
             this.loadData(this.urlFirst)
                 .then(menuItems => {
-                    this.menu.First = menuItems;
+                    this.menu.first = menuItems;
                 });
 
             this.loadData(this.urlSecond)
                 .then(menuItems => {
-                    this.menu.Second = menuItems;
+                    this.menu.second = menuItems;
                 });
 
             this.loadData(this.urlPoke)
                 .then(menuItems => {
-                    this.menu.Poke = menuItems;
+                    this.menu.poke = menuItems;
                 });
         }
     }
 
+    // TODO: Mejorar el enlace con JSON
     loadData(url: string): Promise<MenuItem[]> {
         return new Promise((resolve) => {
             const conection = new XMLHttpRequest();
@@ -75,15 +81,17 @@ export class EditableMenuComponent implements OnInit {
         });
     }
 
-    edit() {
+    edit(): void {
+        this.editMode = !this.editMode;
+        this.originalMenu = this.menu;
+    }
+
+    saveChanges(): void {
         this.editMode = !this.editMode;
     }
 
-    saveChanges() {
+    cancelEdit(): void {
         this.editMode = !this.editMode;
-    }
-
-    cancelEdit() {
-        this.editMode = !this.editMode;
+        this.menu = this.originalMenu;
     }
 }

@@ -1,0 +1,19 @@
+select {
+    color: black;
+    cursor: pointer;
+    font: inherit;
+    
+    
+    appearance: none;
+    background: transparent;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+    padding: 1rem 0 1rem 1rem;
+    width: 70%;
+}
+
+option {
+    background-color: #9a5833;
+}

@@ -1,11 +1,12 @@
 <section>
     <article>
-        <h3>{{ "cafeteria.dailyMenu" | translate }}</h3>
+        <h1>{{ "cafeteria.dailyMenu" | translate }}</h1>
         <form>
             <input type="date" name="date">
         </form>
     </article>
     <article>
+        <h2>{{ "cafeteria.starters" | translate }}</h2>
         <div *ngFor="let item of menu.First; let i = index">
             <div>
                 <img [src]="'../../../assets/images/First ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
@@ -13,11 +14,13 @@
             </div>
             <div>
                 <p>{{ item.name }} </p>
+                <p *ngIf="pruebaCookie" class="basket"><i class="fa-solid fa-basket-shopping"></i></p>
                 <p>{{ item.price }} €</p>
             </div>
         </div>
     </article>
     <article>
+        <h2>{{ "cafeteria.entrees" | translate }}</h2>
         <div *ngFor="let item of menu.Second; let i = index">
             <div>
                 <img [src]="'../../../assets/images/Second ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
@@ -25,11 +28,13 @@
             </div>
             <div>
                 <p>{{ item.name }} </p>
+                <p><i class="fa-solid fa-basket-shopping"></i></p>
                 <p>{{ item.price }} €</p>
             </div>
         </div>
     </article>
     <article>
+        <h2> Poke </h2>
         <div *ngFor="let item of menu.Poke; let i = index">
             <div>
                 <img [src]="'../../../assets/images/Poke ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
@@ -37,6 +42,7 @@
             </div>
             <div>
                 <p>{{ item.name }} </p>
+                <p><i class="fa-solid fa-basket-shopping"></i></p>
                 <p>{{ item.price }} €</p>
             </div>
         </div>

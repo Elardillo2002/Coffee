@@ -1,15 +1,11 @@
 main {
-    background-color: #e6b68b;
-    padding: 5%;
     display: grid;
     grid-template-columns: 0.5fr 0.5fr 1fr;
-    column-gap: 1%;
-}
+    column-gap: 2%;
 
-h3 {
-    font-size: 25px;
-    color: white;
-    margin-bottom: 5vh;
+    background-color: #e6b68b;
+    padding: 5%;
+    
 }
 
 table {
@@ -22,10 +18,18 @@ tr {
     background-color: white;
 }
 
-td, th {
+tr:nth-child(2n+1) {
+    background-color: #e6bf9c;
+}
+
+tr:last-of-type td {
+    border-bottom: none;
+}
+
+th, td {
+    border-bottom: 1px solid #ac7b51;
     font-size: 20px;
     padding: 10px 15px;
-    border-bottom: 1px solid #ac7b51;
 }
 
 th {
@@ -36,12 +40,10 @@ td:nth-child(1) {
     border-right: 1px solid #ac7b51
 }
 
-tr:nth-child(2n+1) {
-    background-color: #e6bf9c;
-}
-
-tr:last-of-type td {
-    border-bottom: none;
+h1 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 5vh;
 }
 
 form {
@@ -58,11 +60,28 @@ label, input {
 }
 
 input[type=submit] {
-    width: 150px;
     border-radius: 5px;
+    width: 150px;
 }
 
 input[type=submit]:hover {
-    background-color: #e6b68b;
-    color: white;
+    background-color: #d1d1d1;
+}
+
+@media (max-width: 1100px) {
+    main {
+        grid-template-columns: 0.5fr 0.5fr;
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 0.5fr;
+        justify-content: center;
+    }
+
+    td, th, input {
+        font-size: 15px;
+    }
 }

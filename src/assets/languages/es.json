@@ -44,9 +44,11 @@
             "part3": "para acceder a este apartado"
         },
         "dailyMenu": "Menú del día",
-        "tasteCoffees": "Prueba nuestros cafés"
+        "tasteCoffees": "Prueba nuestros cafés",
+        "starters": "Entrantes",
+        "entrees": "Platos principales"
     },
-
+    
     "schedule": {
         "schedule": "Horario",
         "monday": "Lunes",
@@ -56,7 +58,7 @@
         "friday": "Viernes",
         "saturday": "Sábado",
         "sunday": "Domingo",
-        "openingHours": "8:00 - 18:00 horas",
+        "openingHours": "8:00 - 18:00h",
         "closed": "Cerrado"
     },
     

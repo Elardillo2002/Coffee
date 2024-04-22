@@ -1,9 +1,10 @@
 button {
+    color: #545454;
     font-family: "Josefin Sans", sans-serif;
     font-size: 17px;
-    padding: 0;
-    border: none;
-    background-color: #cd966c;
+
+    background-color: transparent;
+    border: 0;
     cursor: pointer;
-    color: #545454;
+    padding: 0;
 }

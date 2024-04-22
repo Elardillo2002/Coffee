@@ -1,31 +1,37 @@
 {
     "First": [
         {
+            "id": 0,
             "name": "Garbanzos con gulas",
             "price": 3.15,
             "date": "2024-03-14"
         },
         {
+            "id": 1,
             "name": "Macarrones con tomate",
             "price": 2.18,
             "date": "2024-03-14"
         },
         {
+            "id": 2,
             "name": "Espinacas y mejillones",
             "price": 2.15,
             "date": "2024-03-14"
         },
         {
+            "id": 3,
             "name": "Alubias blancas",
             "price": 2.55,
             "date": "2024-03-15"
         },
         {
+            "id": 4,
             "name": "Arroz",
             "price": 1.25,
             "date": "2024-03-15"
         },
         {
+            "id": 5,
             "name": "Mix de setas y jamón",
             "price": 2.99,
             "date": "2024-03-15"
@@ -33,31 +39,37 @@
     ],
     "Second": [
         {
+            "id": 6,
             "name": "Calabín relleno de atún",
             "price": 1.59,
             "date": "2024-03-14"
         },
         {
+            "id": 7,
             "name": "Huevo y queso azul con patatas",
             "price": 2.15,
             "date": "2024-03-14"
         },
         {
+            "id": 8,
             "name": "Ensalada",
             "price": 1.99,
             "date": "2024-03-14"
         },
         {
+            "id": 9,
             "name": "Aros de cebolla",
             "price": 2.56,
             "date": "2024-03-15"
         },
         {
+            "id": 10,
             "name": "Merluza con ensalada de patatas",
             "price": 4.59,
             "date": "2024-03-15"
         },
         {
+            "id": 11,
             "name": "Alcachofas",
             "price": 3.69,
             "date": "2024-03-15"
@@ -65,31 +77,37 @@
     ],
     "Poke": [
         {
+            "id": 12,
             "name": "Pasta Vegetal",
             "price": 3.00,
             "date": "2024-03-14"
         },
         {
+            "id": 13,
             "name": "Pasta con atún",
             "price": 3.00,
             "date": "2024-03-14"
         },
         {
+            "id": 14,
             "name": "Pasta con pollo",
             "price": 3.00,
             "date": "2024-03-14"
         },
         {
+            "id": 15,
             "name": "Arroz Vegetal",
             "price": 4.00,
             "date": "2024-03-15"
         },
         {
+            "id": 16,
             "name": "Arroz con atún",
             "price": 4.00,
             "date": "2024-03-15"
         },
         {
+            "id": 17,
             "name": "Arroz con pollo",
             "price": 4.00,
             "date": "2024-03-15"

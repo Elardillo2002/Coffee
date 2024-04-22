@@ -1,33 +1,39 @@
 div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 21px 21px;
-    margin: 0 7%;
-    column-gap: 1%;
+    column-gap: 4%;
+
     height: 56px;
-}
-
-h3 {
-    font-family: "Whisper", cursive;
-    text-align: center;
-    font-size: 40px;
-    grid-column: 1 / -1;
-}
-
-p {
-    font-size: 18px;
-}
-
-p:nth-child(4),
-p:nth-child(5) {
-    font-size: 20px;
+    margin: 0 10%;
 }
 
 div:not(:last-of-type) {
     border-bottom: 1px solid lightgray;
 }
 
+/* Menu editing */
+h3 {
+    grid-column: 1 / -1;
+
+    font-family: "Whisper", cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Edit icons */
+p:nth-child(4),
+p:nth-child(5) {
+    font-size: 20px;
+}
+
 input {
+    border: none;
     font-family: "Josefin Sans", sans-serif;
     font-size: 18px;
-    border: none;
 }
+
+/* TODO: Hacer responsive */

@@ -9,17 +9,17 @@
             <p> </p>
             <p (click)="edit()"><i class="fa-solid fa-pencil" style="color: black;"></i></p>
         </div>
-        <div *ngFor="let item of menu.First; let i = index">
+        <div *ngFor="let item of menu.first; let i = index">
             <p>{{ item.name }} </p>
             <p>{{ item.date }} </p>
             <p>{{ item.price }} € </p>
         </div>
-        <div *ngFor="let item of menu.Second; let i = index">
+        <div *ngFor="let item of menu.second; let i = index">
             <p>{{ item.name }} </p>
             <p>{{ item.date }} </p>
             <p>{{ item.price }} € </p>
         </div>
-        <div *ngFor="let item of menu.Poke; let i = index">
+        <div *ngFor="let item of menu.poke; let i = index">
             <p>{{ item.name }} </p>
             <p>{{ item.date }} </p>
             <p>{{ item.price }} € </p>
@@ -34,17 +34,17 @@
             <p (click)="saveChanges()"><i class="fa-solid fa-circle-check" style="color: #63e6be;"></i></p>
             <p (click)="cancelEdit()"><i class="fa-solid fa-circle-xmark" style="color: #ff513d;"></i></p>
         </div>
-        <div *ngFor="let item of menu.First; let i = index">
+        <div *ngFor="let item of menu.first; let i = index">
             <input [(ngModel)]="item.name" type="text" name="name">
             <input [(ngModel)]="item.date" type="date" name="date">
             <input [(ngModel)]="item.price" type="text" name="price">
         </div>
-        <div *ngFor="let item of menu.Second; let i = index">
+        <div *ngFor="let item of menu.second; let i = index">
             <input [(ngModel)]="item.name" type="text" name="name">
             <input [(ngModel)]="item.date" type="date" name="date">
             <input [(ngModel)]="item.price" type="text" name="price">
         </div>
-        <div *ngFor="let item of menu.Poke; let i = index">
+        <div *ngFor="let item of menu.poke; let i = index">
             <input [(ngModel)]="item.name" type="text" name="name">
             <input [(ngModel)]="item.date" type="date" name="date">
             <input [(ngModel)]="item.price" type="text" name="price">

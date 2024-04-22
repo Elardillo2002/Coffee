@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'src/app/services/cookie.service';
+
+import { MenuService } from 'src/app/services/menu.service';
+
 import { distinct } from 'rxjs';
 
 interface MenuItem {
@@ -21,17 +25,27 @@ interface MenuType {
 
 // TODO: Use NgModel with FormsModule (import in app.module.ts) for items.date
 export class JsonReaderComponent implements OnInit {
+    pruebaCookie: boolean = false;
     urlFirst: string = "http://localhost:3000/First";
     urlSecond: string = "http://localhost:3000/Second";
     urlPoke: string = "http://localhost:3000/Poke";
+
+    jsonData: any;
 
     menu: MenuType = {
         First: [],
         Second: [],
         Poke: []
-      };    
+      };
+
+      constructor (
+        private cookieService: CookieService, 
+        private menuService: MenuService
+    ) {}
 
     ngOnInit() {
+        this.pruebaCookie = this.cookieService.checkCookie("prueba");
+
         this.loadData(this.urlFirst)
             .then(menuItems => {
                 this.menu.First = menuItems;
@@ -46,6 +60,11 @@ export class JsonReaderComponent implements OnInit {
             .then(menuItems => {
                 this.menu.Poke = menuItems;
             });
+
+            this.menuService.getData().subscribe(data => {
+                this.jsonData = data;
+                console.log(this.jsonData);
+            })
 
         const date: string = new Date().toISOString().slice(0,10); // Take today's string value
         const dateInput = document.querySelector("input[type=date]") as HTMLInputElement; // Select date input

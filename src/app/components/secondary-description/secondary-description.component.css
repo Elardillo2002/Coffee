@@ -1,34 +1,35 @@
-div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    text-align: center;
-    margin: 0 12vw;
-}
-
 hr {
-    overflow: visible;
-    padding: 0;
     border: none;
     border-top: medium double #9a5833;
     color: #9a5833;;
     text-align: center;
+    overflow: visible;
+    padding: 0;
 }
 
 hr:after {
-     content: "☕︎"; /* § */
-    display: inline-block;
+    content: "☕︎";
     position: relative;
-    /* top: -0.7em; */
-    top: -1.1em;
+    top: -0.9em;
+
+    background: white;
     font-size: 2em;
     padding: 0.2em 0.25em;
-    background: white;
+}
+
+div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+
+    margin: 0 12vw;
+    text-align: center;
 }
 
 img {
-    grid-row: 1 / -1;
     grid-column: 1 / 2;
+    grid-row: 1 / -1;
 }
 
 img:nth-child(1) {
@@ -36,32 +37,45 @@ img:nth-child(1) {
 }
 
 img:nth-child(2) {
-    width: 35vh;
     margin: 200px 0 0 23vw;
+    width: 35vh;
 }
 
-h5 {
-    font-size: 25px;
-    margin: 55% 0 0 0;
+h1 {
     position: relative;
     bottom: 0;
+
+    font-size: 25px;
+    margin: 55% 0 0 0;
 }
 
 a {
-    margin: 0 auto;
-    width: 70px;
-    min-width: 60px;
-    height: 15px;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
+    background-color: #9a5833;
     border: 0.5px solid #9a5833;
     border-radius: 10px;
-    background-color: #9a5833;
+    color: white;
+    text-decoration: none;
+
+    height: 15px;
+    width: 70px;
+
+    margin: 0 auto;
+    padding: 15px;
 }
 
 @media (max-width: 1400px) {
     img:nth-child(2) {
         display: none;
+    }
+}
+
+/* TODO: Mejorar este responsive */
+@media (max-width: 800px) {
+    img {
+        width: 45vw;
+    }
+
+    h1 {
+        font-size: 18px;
     }
 }

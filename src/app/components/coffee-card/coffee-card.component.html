@@ -1,14 +1,12 @@
-<article>
-    <div class="card">
-        <div class="imgBx">
-            <img src="../../../assets/images/{{ coffee.src }}.png" alt="{{ coffee.name | translate }}">
+<section>
+    <article>
+        <img src="../../../assets/images/{{ coffee.src }}.webp" alt="{{ coffee.name | translate }}">
+    </article>
+    <article>
+        <h2> {{ "coffeeTypes.coffee" | translate }} {{ coffee.name | translate }} </h2>
+        <div>
+            <h3> {{ "capital.ingredients" | translate }} </h3>
+            <span> {{ coffee.ingredients | translate }} </span>
         </div>
-        <div class="contentBx">
-            <h2> {{ "coffeeTypes.coffee" | translate }} {{ coffee.name | translate }} </h2>
-            <div class="ingredients">
-                <h3> {{ "capital.ingredients" | translate }} </h3>
-                <span> {{ coffee.ingredients | translate }} </span>
-            </div>
-        </div>
-    </div>
-</article>
+    </article>
+</section>

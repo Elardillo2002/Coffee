@@ -44,7 +44,9 @@
             "part3": "to access this section"
         },
         "dailyMenu": "Daily menu",
-        "tasteCoffees": "Taste our coffees"
+        "tasteCoffees": "Taste our coffees",
+        "starters": "Starters",
+        "entrees": "Entrees"
     },
 
     "schedule": {

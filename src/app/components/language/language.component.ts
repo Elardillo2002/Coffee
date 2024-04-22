@@ -11,6 +11,7 @@ export class LanguageComponent {
     options = [
         {value: 'es', display: 'Español'},
         {value: 'en', display: 'English'},
+        {value: 'ru', display: 'Русский'},
     ];
 
     constructor(private translate: TranslateService) {}
