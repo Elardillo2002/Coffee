@@ -13,6 +13,7 @@ main {
 .notFullPage {
     position: fixed;
     bottom: 0;
+    height: 240px;
     width: 100%;
     margin-top: 100px;
 }

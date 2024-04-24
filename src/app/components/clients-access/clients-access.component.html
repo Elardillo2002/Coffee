@@ -1,0 +1,13 @@
+<app-header></app-header>
+<main>
+    <h1> {{ "accountSettings.accountAccess" | translate }} </h1>
+    <form>
+        <label for="user"> {{ "accountSettings.user" | translate }} </label>
+        <input [(ngModel)]="email" type="text" name="email" [placeholder]=" 'accountSettings.user' | translate ">
+        <label for="password"> {{ "accountSettings.password" | translate }} </label>
+        <input [(ngModel)]="password" type="password" name="password" [placeholder]=" 'accountSettings.password' | translate ">
+        <button (click)="Access()"> {{ "accountSettings.access" | translate }} </button>
+    </form>
+    <p></p>
+</main>
+<app-footer class="notFullPage"></app-footer>

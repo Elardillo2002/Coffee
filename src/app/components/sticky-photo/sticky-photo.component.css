@@ -51,7 +51,7 @@ a:hover, a:active {
 }
 
 #menu {
-    background-image: url("../../../assets/images/Restaurant.jpg");
+    background-image: url("../../../assets/images/Restaurant.webp");
 }
 
 @media (max-width: 1000px) {

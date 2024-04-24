@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
-    selector: 'app-backOffice',
-    templateUrl: './backOffice.component.html',
-    styleUrls: ['./backOffice.component.css']
+  selector: 'app-clients-access',
+  templateUrl: './clients-access.component.html',
+  styleUrls: ['./clients-access.component.css']
 })
-
-export class BackOfficeComponent {
+export class ClientsAccessComponent {
     email: string = "";
     password: string = "";
     errorMessage: string = "";

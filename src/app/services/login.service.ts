@@ -20,7 +20,7 @@ export class LoginService {
 
         let accountPrueba = {
             user: "prueba",
-            password: "1234"
+            password: "prueba"
         }
 
         // Expire time for cookie

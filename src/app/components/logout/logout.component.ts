@@ -9,6 +9,7 @@ import { CookieService } from 'src/app/services/cookie.service';
 
 export class LogoutComponent {
     adminCookie: boolean = false;
+    pruebaCookie: boolean = false;
 
     // Calls cookieService and check if exists
     constructor(
@@ -17,11 +18,17 @@ export class LogoutComponent {
 
     ngOnInit(): void {
         this.adminCookie = this.cookieService.checkCookie("admin");
+        this.pruebaCookie = this.cookieService.checkCookie("prueba");
     }
 
     // Delete admin cookie and reload page
     logout() {
-        document.cookie = "admin=;Max-Age=-999999";
-        location.reload();
+        if (this.adminCookie) {
+            document.cookie = "admin=;Max-Age=-999999";
+            location.reload();
+        } else if (this.pruebaCookie) {
+            document.cookie = "prueba=;Max-Age=-999999";
+            location.reload();            
+        }
     }
 }

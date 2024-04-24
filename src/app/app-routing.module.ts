@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BackOfficeComponent } from './components/backOffice/backOffice.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { EditableMenuComponent } from './components/editable-menu/editable-menu.component';
+import { ClientsAccessComponent } from './components/clients-access/clients-access.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' }, // Principal page
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: "cafeteria", component: CafeteriaComponent },
   { path: "menu", component: MenuComponent },
   { path: "contact", component: ContactComponent },
+  { path: "accountAccess", component: ClientsAccessComponent },
   { path: "backoffice", component: BackOfficeComponent },
   { path: "emenu", component: EditableMenuComponent },
   { path: "notFound", component: NotFoundPageComponent },

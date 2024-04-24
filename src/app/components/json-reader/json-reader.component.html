@@ -2,48 +2,54 @@
     <article>
         <h1>{{ "cafeteria.dailyMenu" | translate }}</h1>
         <form>
-            <input type="date" name="date">
+            <input type="date" name="date" [(ngModel)]="selectedDate">
         </form>
     </article>
     <article>
         <h2>{{ "cafeteria.starters" | translate }}</h2>
-        <div *ngFor="let item of menu.First; let i = index">
-            <div>
-                <img [src]="'../../../assets/images/First ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
-                <hr>
-            </div>
-            <div>
-                <p>{{ item.name }} </p>
-                <p *ngIf="pruebaCookie" class="basket"><i class="fa-solid fa-basket-shopping"></i></p>
-                <p>{{ item.price }} €</p>
+        <div *ngFor="let item of jsonDataFirst; let i = index">
+            <div *ngIf="item.date == selectedDate">
+                <div>
+                    <img [src]="'../../../assets/images/First ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
+                    <hr>
+                </div>
+                <div>
+                    <p>{{ item.name }} </p>
+                    <p *ngIf="pruebaCookie" class="basket"><i class="fa-solid fa-basket-shopping"></i></p>
+                    <p>{{ item.price }} €</p>
+                </div>
             </div>
         </div>
     </article>
     <article>
         <h2>{{ "cafeteria.entrees" | translate }}</h2>
-        <div *ngFor="let item of menu.Second; let i = index">
-            <div>
-                <img [src]="'../../../assets/images/Second ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
-                <hr>
-            </div>
-            <div>
-                <p>{{ item.name }} </p>
-                <p><i class="fa-solid fa-basket-shopping"></i></p>
-                <p>{{ item.price }} €</p>
+        <div *ngFor="let item of jsonDataSecond; let i = index">
+            <div *ngIf="item.date == selectedDate">
+                <div>
+                    <img [src]="'../../../assets/images/Second ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
+                    <hr>
+                </div>
+                <div>
+                    <p>{{ item.name }} </p>
+                    <p *ngIf="pruebaCookie" class="basket"><i class="fa-solid fa-basket-shopping"></i></p>
+                    <p>{{ item.price }} €</p>
+                </div>
             </div>
         </div>
     </article>
     <article>
         <h2> Poke </h2>
-        <div *ngFor="let item of menu.Poke; let i = index">
-            <div>
-                <img [src]="'../../../assets/images/Poke ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
-                <hr>
-            </div>
-            <div>
-                <p>{{ item.name }} </p>
-                <p><i class="fa-solid fa-basket-shopping"></i></p>
-                <p>{{ item.price }} €</p>
+        <div *ngFor="let item of jsonDataPoke; let i = index">
+            <div *ngIf="item.date == selectedDate">
+                <div>
+                    <img [src]="'../../../assets/images/Poke ' + (i + 1) + '.jpg'" alt="{{ item.name }}">
+                    <hr>
+                </div>
+                <div>
+                    <p>{{ item.name }} </p>
+                    <p *ngIf="pruebaCookie" class="basket"><i class="fa-solid fa-basket-shopping"></i></p>
+                    <p>{{ item.price }} €</p>
+                </div>
             </div>
         </div>
     </article>
