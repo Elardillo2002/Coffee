@@ -3,13 +3,13 @@ main {
     grid-template-columns: 0.5fr 0.5fr 1fr;
     column-gap: 2%;
 
-    background-color: #e6b68b;
+    background-color: #edcdb0;
     padding: 5%;
     
 }
 
 table {
-    border: 3px solid #ac7b51;
+    border: 3px solid #835832;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -19,7 +19,7 @@ tr {
 }
 
 tr:nth-child(2n+1) {
-    background-color: #e6bf9c;
+    background-color: #e5c1a2;
 }
 
 tr:last-of-type td {
@@ -27,7 +27,7 @@ tr:last-of-type td {
 }
 
 th, td {
-    border-bottom: 1px solid #ac7b51;
+    border-bottom: 1px solid #c89c76;
     font-size: 20px;
     padding: 10px 15px;
 }
@@ -37,11 +37,10 @@ th {
 }
 
 td:nth-child(1) {
-    border-right: 1px solid #ac7b51
+    border-right: 1px solid #c89c76;
 }
 
 h1 {
-    color: white;
     font-size: 25px;
     margin-bottom: 5vh;
 }
@@ -53,6 +52,10 @@ form {
 
 label {
     user-select: none;
+}
+
+input {
+    height: 40px;
 }
 
 label, input {

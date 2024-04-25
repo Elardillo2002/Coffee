@@ -19,6 +19,7 @@ interface MenuItem {
 export class JsonReaderComponent implements OnInit {
     pruebaCookie: boolean = false;
 
+    jsonDataMenu: any;
     jsonDataFirst: any;
     jsonDataSecond: any;
     jsonDataPoke: any;
@@ -34,16 +35,17 @@ export class JsonReaderComponent implements OnInit {
         this.pruebaCookie = this.cookieService.checkCookie("prueba");
 
         const date: string = new Date().toISOString().slice(0,10); // Take today's string value
+        this.menuService.getDataMenu().subscribe(data => {console.log(data)});
         this.menuService.getDataFirst().subscribe((data: MenuItem[]) => {
-            this.jsonDataFirst = data.filter((item: MenuItem) => item.date === date);
+            this.jsonDataFirst = data.filter((item: MenuItem) => item.date == date);
         });
 
         this.menuService.getDataSecond().subscribe((data: MenuItem[]) => {
-            this.jsonDataSecond = data.filter((item: MenuItem) => item.date === date);
+            this.jsonDataSecond = data.filter((item: MenuItem) => item.date == date);
         });
         
         this.menuService.getDataPoke().subscribe((data: MenuItem[]) => {
-            this.jsonDataPoke = data.filter((item: MenuItem) => item.date === date);
+            this.jsonDataPoke = data.filter((item: MenuItem) => item.date == date);
         });
 
         const dateInput = document.querySelector("input[type=date]") as HTMLInputElement; // Select date input

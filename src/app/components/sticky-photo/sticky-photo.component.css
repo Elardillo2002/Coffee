@@ -61,7 +61,7 @@ a:hover, a:active {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 517px) {
     h1 {
         padding: 10vh 0 0 2vh;
     }
