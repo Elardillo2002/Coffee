@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MenuService {
 
-    url: string = "localhost:9995/api/dish/all";
+    url: string = "api/dish/all";
     urlFirst: string = "http://localhost:3000/First";
     urlSecond: string = "http://localhost:3000/Second";
     urlPoke: string = "http://localhost:3000/Poke";
