@@ -8,20 +8,29 @@ import { CookieService } from 'src/app/services/cookie.service';
 })
 
 export class LogoutComponent {
+    /** Admin's cookie checker */
     adminCookie: boolean = false;
+
+    /** Test user's cookie checker */
     pruebaCookie: boolean = false;
 
-    // Calls cookieService and check if exists
+    /**
+     * Component constructor
+     * @param {CookieService} cookieService Checks admin cookies
+     */
     constructor(
         private cookieService: CookieService
     ) {}
 
     ngOnInit(): void {
+        /** Searchs for admin's cookie */
         this.adminCookie = this.cookieService.checkCookie("admin");
+
+        /** Searchs for test user's cookie */
         this.pruebaCookie = this.cookieService.checkCookie("prueba");
     }
 
-    // Delete admin cookie and reload page
+    /** Delete user's cookie and reload the page */
     logout() {
         if (this.adminCookie) {
             document.cookie = "admin=;Max-Age=-999999";

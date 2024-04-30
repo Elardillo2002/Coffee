@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class CookieService {
     constructor() { }
 
-    // Checks for "name" cookie and returns true or false
+    /** Checks for "name" cookie and returns true or false */
     checkCookie(name: string): boolean {
         return document.cookie.split(';').some((item) => 
             item.trim().startsWith(name + '=')

@@ -7,19 +7,25 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./clients-access.component.css']
 })
 export class ClientsAccessComponent {
+    /** Email user variable. ngModel*/
     email: string = "";
+    /** Password user variable. ngModel */
     password: string = "";
-    errorMessage: string = "";
 
+    /**
+     * Component constructor
+     * @param {LoginService} loginService 
+     */
     constructor(private loginService: LoginService) {}
 
-    Access() {
-        this.loginService.login(this.email, this.password, this.errorMessage).subscribe(
+    /** Checks user data and redirect user */
+    access() {
+        this.loginService.login(this.email, this.password).subscribe(
             (response) => {
-                if (response != "true") {
+                if (response === false) {
                     let p: HTMLElement | null = document.querySelector("main p");
                     p!.style.color = "red";
-                    p!.textContent = response;
+                    p!.textContent = "Las credenciales son incorrectas";
                 }
             }
         )

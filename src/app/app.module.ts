@@ -18,7 +18,6 @@ import { MenuComponent } from './components/menu/menu.component';
 import { JsonReaderComponent } from './components/json-reader/json-reader.component';
 import { CoffeeCardComponent } from './components/coffee-card/coffee-card.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { BackOfficeComponent } from './components/backOffice/backOffice.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { FormsModule } from '@angular/forms';
 import { EditableMenuComponent } from './components/editable-menu/editable-menu.component';
@@ -40,7 +39,6 @@ import { ClientsAccessComponent } from './components/clients-access/clients-acce
     JsonReaderComponent,
     CoffeeCardComponent,
     ContactComponent,
-    BackOfficeComponent,
     NotFoundPageComponent,
     EditableMenuComponent,
     LogoutComponent,

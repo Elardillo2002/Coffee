@@ -1,18 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'src/app/services/cookie.service';
-
-interface MenuItem {
-    id: number,
-    name: string,
-    price: number,
-    date: string
-}
-
-interface MenuType {
-    first: MenuItem[];
-    second: MenuItem[];
-    poke: MenuItem[];
-}
+import { MenuService } from 'src/app/services/menu.service';
+import { MenuItem } from 'src/app/models/menu-item';
+import { MenuType } from 'src/app/models/menu-type';
 
 @Component({
   selector: 'app-editable-menu',
@@ -21,75 +11,79 @@ interface MenuType {
 })
 
 export class EditableMenuComponent implements OnInit {
+    /** Admin cookie checker */
     adminCookie: boolean = false;
+
+    /** Variable for edit mode */
     editMode: boolean = false;
-    editItem: MenuItem | null = null;
 
-    urlFirst: string = "http://localhost:3000/First";
-    urlSecond: string = "http://localhost:3000/Second";
-    urlPoke: string = "http://localhost:3000/Poke";
-
+    /** Original menu before making changes
+     * @type {first: Array, second: Array, poke: Array}
+     */
     originalMenu: MenuType = {
         first: [],
         second: [],
         poke: []
     };
 
+    /** 
+     * Current menu displayed on the interface
+     * @type {first: Array, second: Array, poke: Array}
+     */
     menu: MenuType = {
         first: [],
         second: [],
         poke: []
       };    
 
-    constructor(private cookieService: CookieService) { }
+    /**
+     * Component constructor
+     * @param {CookieService} cookieService Checks admin cookies
+     * @param {MenuService} menuService Takes menu from API
+     */
+    constructor(
+        private cookieService: CookieService,
+        private menuService: MenuService
+    ) { }
 
     ngOnInit(): void {
+        /** Searchs for admin's cookie */
         this.adminCookie = this.cookieService.checkCookie("admin");
 
+        /** Only if admin cookie exists */
         if (this.adminCookie) {
-            this.loadData(this.urlFirst)
-                .then(menuItems => {
-                    this.menu.first = menuItems;
-                });
+            /** Takes first dishes from the API and export to menu.first & originaMenu.first */
+            this.menuService.getDataFirst().subscribe(data => {
+                this.menu.first = data;
+                this.originalMenu.first = data;
+            });
 
-            this.loadData(this.urlSecond)
-                .then(menuItems => {
-                    this.menu.second = menuItems;
-                });
-
-            this.loadData(this.urlPoke)
-                .then(menuItems => {
-                    this.menu.poke = menuItems;
-                });
+            /** Takes first dishes from the API and export to menu.second & originaMenu.second */
+            this.menuService.getDataSecond().subscribe(data => {
+                this.menu.second = data;
+                this.originalMenu.second = data;
+            });
+            
+            /** Takes first dishes from the API and export to menu.poke & originaMenu.poke */
+            this.menuService.getDataPoke().subscribe(data => {
+                this.menu.poke = data;
+                this.originalMenu.poke = data;
+            });
         }
     }
 
-    // TODO: Mejorar el enlace con JSON
-    loadData(url: string): Promise<MenuItem[]> {
-        return new Promise((resolve) => {
-            const conection = new XMLHttpRequest();
-
-            conection.addEventListener("load", () => {
-                if (conection.status >= 200 && conection.status < 300) {
-                    const menu = JSON.parse(conection.response) as MenuItem[];
-                    resolve(menu);
-                }
-            });
-
-            conection.open("GET", url, true);
-            conection.send();
-        });
-    }
-
+    /** Method to activating / deactivating edit mode */
     edit(): void {
         this.editMode = !this.editMode;
         this.originalMenu = this.menu;
     }
 
+    /** Method for change API data */
     saveChanges(): void {
         this.editMode = !this.editMode;
     }
 
+    /** Method to cancel edit mode and restore the original menu */
     cancelEdit(): void {
         this.editMode = !this.editMode;
         this.menu = this.originalMenu;

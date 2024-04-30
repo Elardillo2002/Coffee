@@ -22,7 +22,6 @@
     "@angular/router": "^16.2.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
-    "jsdoc": "^4.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -32,15 +31,19 @@
     "@angular/cli": "^16.2.12",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
+    "angular-jsdoc": "^1.5.1",
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^11.1.0",
     "concurrently": "^8.2.2",
     "jasmine-core": "~4.6.0",
+    "jsdoc": "^4.0.2",
+    "jsdoc-plugin-typescript": "^2.2.1",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "typedoc": "^0.25.13",
     "typescript": "~5.1.3"
   }
 }

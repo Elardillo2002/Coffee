@@ -1,10 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface Coffee {
-    name: string;
-    ingredients: string;
-    src: string;
-}
+import { Coffee } from 'src/app/models/coffee';
 
 @Component({
     selector: 'app-coffee-card',
@@ -13,6 +8,7 @@ interface Coffee {
 })
 
 export class CoffeeCardComponent {
+    /** Receive coffee list type from cafeteria component */
     @Input() coffee: Coffee = {
         name: "",
         ingredients: "",
