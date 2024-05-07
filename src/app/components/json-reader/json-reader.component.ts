@@ -9,20 +9,26 @@ import { MenuItem } from 'src/app/models/menu-item';
   styleUrls: ['./json-reader.component.css']
 })
 
-// TODO: Use NgModel with FormsModule (import in app.module.ts) for items.date
 export class JsonReaderComponent implements OnInit {
     /** Test user's cookie checker */
     pruebaCookie: boolean = false;
 
     /** API data storage */
     jsonDataMenu: string[] = [];
-    jsonDataFirst: any;
-    jsonDataSecond: any;
-    jsonDataPoke: any;
 
     /** Day selected to display the menu */
     selectedDate: string = "";
+    
+    /** Takes today's string value */
+    date: string = new Date().toISOString().slice(0,10);
 
+    /** Variable for starters dishes */
+    first: MenuItem[] = [];
+    /** Variable for entrees dishes */
+    second: MenuItem[] = [];
+    /** Variable for poke dishes */
+    poke: MenuItem[] = [];
+    
     /**
      * Component constructor
      * @param {CookieService} cookieService Checks admin cookies
@@ -32,34 +38,35 @@ export class JsonReaderComponent implements OnInit {
         private cookieService: CookieService, 
         private menuService: MenuService
     ) {}
-
+    
     ngOnInit() {
         /** Searchs for test user's cookie */
         this.pruebaCookie = this.cookieService.checkCookie("prueba");
 
-        /** Takes today's string value */
-        const date: string = new Date().toISOString().slice(0,10);
-        this.menuService.getDataMenu().subscribe(data => {console.log(data)});
-
-        /** Takes menu.first from JSON data with a filter of date */
-        this.menuService.getDataFirst().subscribe((data: MenuItem[]) => {
-            this.jsonDataFirst = data.filter((item: MenuItem) => item.date === date);
-        });
-
-        /** Takes menu.second from JSON data with a filter of date */
-        this.menuService.getDataSecond().subscribe((data: MenuItem[]) => {
-            this.jsonDataSecond = data.filter((item: MenuItem) => item.date === date);
-        });
-        
-        /** Takes menu.poke from JSON data with a filter of date */
-        this.menuService.getDataPoke().subscribe((data: MenuItem[]) => {
-            this.jsonDataPoke = data.filter((item: MenuItem) => item.date === date);
+        /** Obtains menu for today */
+        this.menuService.getDishDate(this.date).subscribe((data: MenuItem[]) => {
+            this.first = data.filter(item => item.type === "First");
+            this.second = data.filter(item => item.type === "Second");
+            this.poke = data.filter(item => item.type === "Poke");            
         });
 
         /** Selector for input[type=date] */
         const dateInput = document.querySelector("input[type=date]") as HTMLInputElement;
-        dateInput.value = date; 
-        dateInput.min = date;
-        this.selectedDate = date;
+        dateInput.value = this.date;
+        dateInput.min = this.date;
+        this.selectedDate = this.date;
+    }
+    
+    /** Take selected date and shows it */
+    searchDate() {
+        const dateInput = document.querySelector("input[type=date]") as HTMLInputElement;
+        this.date = dateInput.value;
+        
+        /** Obtains menu for selected date */
+        this.menuService.getDishDate(this.date).subscribe((data: MenuItem[]) => {
+            this.first = data.filter(item => item.type === "First");
+            this.second = data.filter(item => item.type === "Second");
+            this.poke = data.filter(item => item.type === "Poke");            
+        });
     }
 }

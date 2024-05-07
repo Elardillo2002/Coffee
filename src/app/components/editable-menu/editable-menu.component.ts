@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'src/app/services/cookie.service';
 import { MenuService } from 'src/app/services/menu.service';
-import { MenuItem } from 'src/app/models/menu-item';
-import { MenuType } from 'src/app/models/menu-type';
+import { DishItem } from 'src/app/models/dish-item';
 
 @Component({
   selector: 'app-editable-menu',
@@ -15,26 +14,14 @@ export class EditableMenuComponent implements OnInit {
     adminCookie: boolean = false;
 
     /** Variable for edit mode */
-    editMode: boolean = false;
+    editMode: boolean = true;
 
-    /** Original menu before making changes
-     * @type {first: Array, second: Array, poke: Array}
-     */
-    originalMenu: MenuType = {
-        first: [],
-        second: [],
-        poke: []
-    };
-
-    /** 
-     * Current menu displayed on the interface
-     * @type {first: Array, second: Array, poke: Array}
-     */
-    menu: MenuType = {
-        first: [],
-        second: [],
-        poke: []
-      };    
+    /** Variable for starters dishes */
+    first: DishItem[] = [];
+    /** Variable for entrees dishes */
+    second: DishItem[] = [];
+    /** Variable for poke dishes */
+    poke: DishItem[] = [];
 
     /**
      * Component constructor
@@ -49,25 +36,16 @@ export class EditableMenuComponent implements OnInit {
     ngOnInit(): void {
         /** Searchs for admin's cookie */
         this.adminCookie = this.cookieService.checkCookie("admin");
-
+        
         /** Only if admin cookie exists */
         if (this.adminCookie) {
-            /** Takes first dishes from the API and export to menu.first & originaMenu.first */
-            this.menuService.getDataFirst().subscribe(data => {
-                this.menu.first = data;
-                this.originalMenu.first = data;
-            });
+            /** Obtains menu for today */
+            this.menuService.getAllDishID().subscribe(data => {console.log(data);});
 
-            /** Takes first dishes from the API and export to menu.second & originaMenu.second */
-            this.menuService.getDataSecond().subscribe(data => {
-                this.menu.second = data;
-                this.originalMenu.second = data;
-            });
-            
-            /** Takes first dishes from the API and export to menu.poke & originaMenu.poke */
-            this.menuService.getDataPoke().subscribe(data => {
-                this.menu.poke = data;
-                this.originalMenu.poke = data;
+            this.menuService.getAllDishID().subscribe((data: DishItem[]) => {
+                this.first = data.filter(item => item.type === "First");
+                this.second = data.filter(item => item.type === "Second");
+                this.poke = data.filter(item => item.type === "Poke");            
             });
         }
     }
@@ -75,9 +53,13 @@ export class EditableMenuComponent implements OnInit {
     /** Method to activating / deactivating edit mode */
     edit(): void {
         this.editMode = !this.editMode;
-        this.originalMenu = this.menu;
     }
 
+    deleteDish(id: number, name: string, date: string) {
+        this.menuService.deleteDish(id).subscribe();
+        alert(`El plato ${name} con fecha ${date} ha sido eliminado`);
+    }
+    
     /** Method for change API data */
     saveChanges(): void {
         this.editMode = !this.editMode;
@@ -86,6 +68,5 @@ export class EditableMenuComponent implements OnInit {
     /** Method to cancel edit mode and restore the original menu */
     cancelEdit(): void {
         this.editMode = !this.editMode;
-        this.menu = this.originalMenu;
     }
 }

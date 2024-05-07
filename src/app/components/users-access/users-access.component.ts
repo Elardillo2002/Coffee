@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
-  selector: 'app-clients-access',
-  templateUrl: './clients-access.component.html',
-  styleUrls: ['./clients-access.component.css']
+  selector: 'app-users-access',
+  templateUrl: './users-access.component.html',
+  styleUrls: ['./users-access.component.css']
 })
-export class ClientsAccessComponent {
+export class UsersAccessComponent {
     /** Email user variable. ngModel*/
     email: string = "";
     /** Password user variable. ngModel */

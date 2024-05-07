@@ -1,4 +1,5 @@
-export interface MenuItem {
+export interface DishItem {
+    dishId: number,
     name: string,
     price: number,
     type: string,

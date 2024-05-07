@@ -1,13 +1,13 @@
-div {
+article div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 21px 21px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 21px 21px;
     column-gap: 4%;
 
     height: 56px;
     margin: 0 10%;
 }
 
-div:not(:last-of-type) {
+article:not(:last-of-type) div{
     border-bottom: 1px solid lightgray;
 }
 
@@ -20,20 +20,57 @@ h3 {
     text-align: center;
 }
 
-p {
+p, 
+input, 
+select {
     font-size: 18px;
 }
 
-/* Edit icons */
-p:nth-child(4),
-p:nth-child(5) {
+/* Icons */
+p:nth-child(5),
+p:nth-child(6),
+button {
     font-size: 20px;
 }
 
-input {
+input, select {
     border: none;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 18px;
+    appearance: none;
 }
 
-/* TODO: Hacer responsive */
+button {
+    grid-column: -2 / -1;
+    background: transparent;
+    border: 0;
+}
+
+@media (max-width: 1125px) {
+    div {
+        grid-template-columns: 1fr 1fr 1fr 45px 21px 21px;
+        column-gap: 1%;
+    }
+
+    p, input, button, select {
+        font-size: 15px;
+    }
+
+    input[name=name] {
+        width: 100%;
+    }
+
+    input[name=price] {
+        width: 35px;
+    }
+
+    input[type=date] {
+        width: 100px;
+    }
+}
+
+/* TODO: Responsive para enanos */
+@media (max-width: 500px) {
+    h3 {
+        font-size: 30px;
+    }
+}

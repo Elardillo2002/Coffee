@@ -7,3 +7,7 @@ button {
     cursor: pointer;
     padding: 0;
 }
+
+button:hover {
+    color: white;
+}

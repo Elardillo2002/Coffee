@@ -38,6 +38,7 @@
         "menuEditing": "Menu editing",
         "dishName": "Dish name",
         "serviceDate": "Service date",
+        "dishType": "Dish type",
         "price": "Price",
         "credentials": {
             "part1": "You need to",
@@ -47,7 +48,8 @@
         "dailyMenu": "Daily menu",
         "tasteCoffees": "Taste our coffees",
         "starters": "Starters",
-        "entrees": "Entrees"
+        "entrees": "Entrees",
+        "poke": "Poke"
     },
 
     "schedule": {

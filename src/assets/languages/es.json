@@ -38,6 +38,7 @@
         "menuEditing": "Edición de menús",
         "dishName": "Nombre del plato",
         "serviceDate": "Fecha de servicio",
+        "dishType": "Tipo de plato",
         "price": "Precio",
         "credentials": {
             "part1": "Necesita",
@@ -47,7 +48,8 @@
         "dailyMenu": "Menú del día",
         "tasteCoffees": "Prueba nuestros cafés",
         "starters": "Entrantes",
-        "entrees": "Platos principales"
+        "entrees": "Platos principales",
+        "poke": "Poke"
     },
     
     "schedule": {

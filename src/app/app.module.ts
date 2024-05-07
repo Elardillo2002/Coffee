@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { EditableMenuComponent } from './components/editable-menu/editable-menu.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { LanguageComponent } from './components/language/language.component';
-import { ClientsAccessComponent } from './components/clients-access/clients-access.component';
+import { UsersAccessComponent } from './components/users-access/users-access.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { ClientsAccessComponent } from './components/clients-access/clients-acce
     EditableMenuComponent,
     LogoutComponent,
     LanguageComponent,
-    ClientsAccessComponent
+    UsersAccessComponent
   ],
   imports: [
     BrowserModule,

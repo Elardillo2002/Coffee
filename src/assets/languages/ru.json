@@ -38,6 +38,7 @@
         "menuEditing": "Редактировать меню",
         "dishName": "Название блюда",
         "serviceDate": "Дата сервиса",
+        "dishType": "Тип блюда",
         "price": "Цена",
         "credentials": {
             "part1": "Нужно",
@@ -47,7 +48,8 @@
         "dailyMenu": "Сегодняшнее меню",
         "tasteCoffees": "Попробуй наше кофе",
         "starters": "Стартовые блюда",
-        "entrees": "Главные блюда"
+        "entrees": "Главные блюда",
+        "poke": "Поке боул"
     },
    
     "schedule": {

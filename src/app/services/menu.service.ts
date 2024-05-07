@@ -1,46 +1,87 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MenuItem } from '../models/menu-item';
 
 @Injectable({
     providedIn: 'root'
 })
 export class MenuService {
-    /** API url with CORS solution */
-    url: string = "api/dish/all";
+    // API url with CORS solution
 
-    /** JSON url conection */
-    urlFirst: string = "http://localhost:3000/First";
+    // DISHES
+    /** Obtain all dishes */
+    urlListAllDish: string = "api/dish/all";
+    /** Obtain all dishes with ID */
+    urlListAllDishID: string = "/api/dish/fulldishes";
+    /** Add a new dish */
+    urlAddDish: string = "api/dish";
+    /** Edit a dish */
+    urlEditDish: string = "/api/dish/edit"
 
-    /** JSON url conection */
-    urlSecond: string = "http://localhost:3000/Second";
 
-    /** JSON url conection */
-    urlPoke: string = "http://localhost:3000/Poke";
+    // MENU
+    /** Obtain dishes of the day */
+    urlMenuToday: string = "api/menu/today";
+    /** Add a new menu */
+    urlNewMenu: string = "api/menu";
 
     /**
      * Component constructor
      * @param httpClient 
      */
     constructor(private httpClient: HttpClient) { }
+    
+    // DISHES
+    /** Get all dishes list 
+     * @returns {Observable<any>}
+    */
+    getAllDish(): Observable<any> {
+        return this.httpClient.get<any>(this.urlListAllDish);
+    }
 
-    /** Get API data using API url */
+    /** Get all dishes list 
+     * @returns {Observable<any>}
+    */
+    getAllDishID(): Observable<any> {
+        return this.httpClient.get<any>(this.urlListAllDishID);
+    }
+
+    /** Get all dishes from specific date 
+     * @param {string} date The specific date
+     * @returns {Observable<any>}
+    */
+    getDishDate(date: string): Observable<any> {
+        return this.httpClient.get<any>(`/api/dish/date/${date}`);
+    }
+
+    /** Add a new dish 
+     * @param {Object} dish Includes name, price, type & date
+    */
+    postDataMenu(dish: Object) {
+        return this.httpClient.post(this.urlAddDish, dish);
+    }
+
+    /** Delete a dish      
+     * @param {number} id Dish ID
+    */
+    deleteDish(id: number) {
+        return this.httpClient.delete(`/api/dish/delete/${id}`);
+    }
+
+    
+    // MENU
+    /** Get API data using API url 
+     * @returns {Observable<any>}
+    */
     getDataMenu(): Observable<any> {
-        return this.httpClient.get<any>(this.url);
+        return this.httpClient.get<any>(this.urlMenuToday);
     }
 
-    /** Get JSON data using urlFirst */
-    getDataFirst(): Observable<any> {
-        return this.httpClient.get<any>(this.urlFirst);
-    }
-
-    /** Get JSON data using urlSecond */
-    getDataSecond(): Observable<any> {
-        return this.httpClient.get<any>(this.urlSecond);
-    }
-
-    /** Get JSON data using urlPoke */
-    getDataPoke(): Observable<any> {
-        return this.httpClient.get<any>(this.urlPoke);
+    /** Create a new menu 
+     * @param {Object} newMenu Includes price & date
+    */
+    createMenu(newMenu: Object) {
+        return this.httpClient.post(this.urlNewMenu, newMenu);
     }
 }
