@@ -1,7 +1,8 @@
 article div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 21px 21px;
+    grid-template-columns: 300px 150px 1fr 60px 21px 21px;
     column-gap: 4%;
+    align-items: center;
 
     height: 56px;
     margin: 0 10%;
@@ -24,6 +25,7 @@ p,
 input, 
 select {
     font-size: 18px;
+    height: 50px;
 }
 
 /* Icons */
@@ -46,8 +48,8 @@ button {
 }
 
 @media (max-width: 1125px) {
-    div {
-        grid-template-columns: 1fr 1fr 1fr 45px 21px 21px;
+    article div {
+        grid-template-columns: 1fr 125px 150px 45px 21px 21px;
         column-gap: 1%;
     }
 
@@ -55,16 +57,8 @@ button {
         font-size: 15px;
     }
 
-    input[name=name] {
-        width: 100%;
-    }
-
     input[name=price] {
         width: 35px;
-    }
-
-    input[type=date] {
-        width: 100px;
     }
 }
 

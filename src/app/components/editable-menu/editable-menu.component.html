@@ -1,6 +1,6 @@
 <app-header></app-header>
 <main *ngIf="adminCookie">
-    <section *ngIf="!editMode">
+    <section *ngIf="!editMode && !addMode">
         <h3>{{ "cafeteria.menuEditing" | translate }}</h3>
         <article>
             <div>
@@ -8,7 +8,7 @@
                 <p><b> {{ "cafeteria.serviceDate" | translate }} </b></p>
                 <p><b> {{ "cafeteria.dishType" | translate }} </b></p>
                 <p><b> {{ "cafeteria.price" | translate }} </b></p>
-                <p> </p>
+                <p (click)="add()"><i class="fa-solid fa-plus" style="color: #000000;"></i></p>
                 <p (click)="edit()"><i class="fa-solid fa-pencil" style="color: black;"></i></p>
             </div>
         </article>
@@ -45,47 +45,73 @@
                 <p><b> {{ "cafeteria.serviceDate" | translate }} </b></p>
                 <p><b> {{ "cafeteria.dishType" | translate }} </b></p>
                 <p><b> {{ "cafeteria.price" | translate }} </b></p>
-                <p (click)="saveChanges()"><i class="fa-solid fa-circle-check" style="color: #63e6be;"></i></p>
-                <p (click)="cancelEdit()"><i class="fa-solid fa-circle-xmark" style="color: #ff513d;"></i></p>
+                <p> </p>
+                <p (click)="edit()"><i class="fa-regular fa-circle-xmark" style="color: black; font-size: 24px;"></i></p>
             </div>
         </article>
         <article *ngFor="let item of first; let i = index">
             <div id="ID{{item.dishId}}">
-                <input [(ngModel)]="item.name" type="text" name="name">
-                <input [(ngModel)]="item.date" type="date" name="date">
-                <select [(ngModel)]="item.type" name="type">
+                <input [(ngModel)]="item.name" type="text" name="name" (blur)="dishChanges(item)">
+                <input [(ngModel)]="item.date" type="date" name="date" (blur)="dishChanges(item)">
+                <select [(ngModel)]="item.type" name="type" (blur)="dishChanges(item)">
                     <option value="First"> {{ "cafeteria.starters" | translate }} </option>
                     <option value="Second"> {{ "cafeteria.entrees" | translate }} </option>
                     <option value="Poke"> {{ "cafeteria.poke" | translate }} </option>
                 </select>
-                <input [(ngModel)]="item.price" type="text" name="price">
+                <input [(ngModel)]="item.price" type="text" name="price" (blur)="dishChanges(item)">
                 <button (click)="deleteDish(item.dishId, item.name, item.date)"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </article>
         <article *ngFor="let item of second; let i = index">
             <div id="ID{{item.dishId}}">
-                <input [(ngModel)]="item.name" type="text" name="name">
-                <input [(ngModel)]="item.date" type="date" name="date">
-                <select [(ngModel)]="item.type" name="type">
+                <input [(ngModel)]="item.name" type="text" name="name" (blur)="dishChanges(item)">
+                <input [(ngModel)]="item.date" type="date" name="date" (blur)="dishChanges(item)">
+                <select [(ngModel)]="item.type" name="type" (blur)="dishChanges(item)">
                     <option value="First"> {{ "cafeteria.starters" | translate }} </option>
                     <option value="Second"> {{ "cafeteria.entrees" | translate }} </option>
                     <option value="Poke"> {{ "cafeteria.poke" | translate }} </option>
                 </select>
-                <input [(ngModel)]="item.price" type="text" name="price">
+                <input [(ngModel)]="item.price" type="text" name="price" (blur)="dishChanges(item)">
                 <button (click)="deleteDish(item.dishId, item.name, item.date)"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </article>
         <article *ngFor="let item of poke; let i = index">
             <div id="ID{{item.dishId}}">
-                <input [(ngModel)]="item.name" type="text" name="name">
-                <input [(ngModel)]="item.date" type="date" name="date">
-                <select [(ngModel)]="item.type" name="type">
+                <input [(ngModel)]="item.name" type="text" name="name" (blur)="dishChanges(item)">
+                <input [(ngModel)]="item.date" type="date" name="date" (blur)="dishChanges(item)">
+                <select [(ngModel)]="item.type" name="type" (blur)="dishChanges(item)">
                     <option value="First"> {{ "cafeteria.starters" | translate }} </option>
                     <option value="Second"> {{ "cafeteria.entrees" | translate }} </option>
                     <option value="Poke"> {{ "cafeteria.poke" | translate }} </option>
                 </select>
-                <input [(ngModel)]="item.price" type="text" name="price">
+                <input [(ngModel)]="item.price" type="text" name="price" (blur)="dishChanges(item)">
                 <button (click)="deleteDish(item.dishId, item.name, item.date)"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </article>
+    </section>
+    <section *ngIf="addMode">
+        <h3>{{ "cafeteria.menuEditing" | translate }}</h3>
+        <article>
+            <div>
+                <p><b> {{ "cafeteria.dishName" | translate }} </b></p>
+                <p><b> {{ "cafeteria.serviceDate" | translate }} </b></p>
+                <p><b> {{ "cafeteria.dishType" | translate }} </b></p>
+                <p><b> {{ "cafeteria.price" | translate }} </b></p>
+                <p> </p>
+                <p (click)="add()"><i class="fa-regular fa-circle-xmark" style="color: black; font-size: 24px;"></i></p>
+            </div>
+        </article>
+        <article>
+            <div>
+                <input [(ngModel)]="newName" type="text" name="name">
+                <input [(ngModel)]="newDate" type="date" name="date" min={{date}}>
+                <select [(ngModel)]="newType" name="type">
+                    <option value="First"> {{ "cafeteria.starters" | translate }} </option>
+                    <option value="Second"> {{ "cafeteria.entrees" | translate }} </option>
+                    <option value="Poke"> {{ "cafeteria.poke" | translate }} </option>
+                </select>
+                <input [(ngModel)]="newPrice" type="text" name="price">
+                <button (click)="addDish()"><i class="fa-solid fa-check"></i></button>
             </div>
         </article>
     </section>
@@ -93,5 +119,4 @@
 <main *ngIf="!adminCookie">
     <p> {{ "cafeteria.credentials.part1" | translate }} <a routerLink="/access">{{ "cafeteria.credentials.part2" | translate }}</a> {{ "cafeteria.credentials.part3" | translate }} </p>    
 </main>
-<app-footer *ngIf="adminCookie"></app-footer>
-<app-footer *ngIf="!adminCookie" class="notFullPage"></app-footer>
+<app-footer [ngClass]="!adminCookie || addMode ? 'notFullPage' : ''"></app-footer>

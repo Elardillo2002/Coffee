@@ -51,7 +51,7 @@ Instalación: https://github.com/coreybutler/nvm-windows/releases
 - Buscar plato por id -> /api/dish/id/_idDelPlato_
 - Buscar platos por fecha -> /api/dish/date/_fechaDelPlato_
 - Añadir nuevo plato -> /api/dish -> BODY con name, price, type, date (POST)
-- Editar plato -> /api/dish/edit -> BODY con id, name, price, type, date (POST)
+- Editar plato -> /api/dish/edit -> BODY con id, name, price, type, date (PUT)
 - Borrar plato -> /api/dish/delete/_idDelPlato_ (DELETE)
 
 ### Menús
