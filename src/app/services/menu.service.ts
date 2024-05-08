@@ -58,8 +58,15 @@ export class MenuService {
     /** Add a new dish 
      * @param {Object} dish Includes name, price, type & date
     */
-    postDataMenu(dish: Object) {
+    addDataDish(dish: Object) {
         return this.httpClient.post(this.urlAddDish, dish);
+    }
+
+    /** Edit a dish 
+     * @param {Object} dish Includes id, name, price, type & date
+    */
+    editDish(dish: Object) {
+        return this.httpClient.put(this.urlEditDish, dish);
     }
 
     /** Delete a dish      

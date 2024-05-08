@@ -24,6 +24,7 @@ import { EditableMenuComponent } from './components/editable-menu/editable-menu.
 import { LogoutComponent } from './components/logout/logout.component';
 import { LanguageComponent } from './components/language/language.component';
 import { UsersAccessComponent } from './components/users-access/users-access.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { UsersAccessComponent } from './components/users-access/users-access.com
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
