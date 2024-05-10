@@ -11,3 +11,15 @@ button {
 button:hover {
     color: white;
 }
+
+a {
+    color: black;
+    cursor: default;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+span:hover, span:active {
+    color: white;
+    cursor: pointer;
+}

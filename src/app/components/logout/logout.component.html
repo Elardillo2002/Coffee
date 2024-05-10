@@ -1,1 +1,2 @@
 <button *ngIf="adminCookie || pruebaCookie" (click)="logout()"> {{ "capital.logOut" | translate }} </button>
+<a *ngIf="!adminCookie && !pruebaCookie" routerLink="/access"><span> {{ "capital.accountAccess" | translate }} </span></a>

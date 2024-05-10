@@ -8,16 +8,14 @@
         <li><a routerLink="/cafeteria"><span> {{ "capital.cafeteria" | translate }} </span></a></li>
         <li><a routerLink="/menu"><span> {{ "capital.menu" | translate }} </span></a></li>
         <li><a routerLink="/contact"><span> {{ "capital.contact" | translate }} </span></a></li>
-        <li *ngIf="adminCookie || pruebaCookie"><app-logout></app-logout></li>
-        <li *ngIf="!adminCookie && !pruebaCookie"><a *ngIf="!adminCookie && !pruebaCookie" routerLink="/access"> {{ "capital.accountAccess" | translate }} </a></li>
+        <li><app-logout></app-logout></li>
     </ul>
     <ul *ngIf="!sidebar">
         <li class="hideOnMobile"><a routerLink="/home"><span> {{ "capital.home" | translate }} </span></a></li>
         <li class="hideOnMobile"><a routerLink="/cafeteria"><span> {{ "capital.cafeteria" | translate }} </span></a></li>
         <li class="hideOnMobile"><a routerLink="/menu"><span> {{ "capital.menu" | translate }} </span></a></li>
         <li class="hideOnMobile"><a routerLink="/contact"><span> {{ "capital.contact" | translate }} </span></a></li>
-        <li class="hideOnMobile" *ngIf="adminCookie || pruebaCookie"><app-logout></app-logout></li>
-        <li class="hideOnMobile" *ngIf="!adminCookie && !pruebaCookie"><a *ngIf="!adminCookie && !pruebaCookie" routerLink="/access"><span> {{ "capital.accountAccess" | translate }} </span></a></li>
+        <li class="hideOnMobile"><app-logout></app-logout></li>
         <li (click)="changeSidebar()" id="menu">
             <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
         </li>

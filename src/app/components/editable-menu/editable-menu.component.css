@@ -47,6 +47,10 @@ button {
     border: 0;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 @media (max-width: 1125px) {
     article div {
         grid-template-columns: 1fr 125px 150px 45px 21px 21px;
