@@ -1,28 +1,58 @@
 # Listado de programas que han de descargar para el correcto desarrollo del proyecto:
-- Descargar npm. 
-> sudo apt-get install npm
-- Descargar Angular.
-> sudo npm i -g @angular/cli@16.2.12
+- docker compose
+> scp docker-compose.yml root@_IP_:/root/
+
+- Instalar actualizaciones 
+> apt update
+> apt-get update
+
+- Editar archivo /etc/hosts
+> nano /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       _Nombre-servidor_
+
+- Instalar docker
+> sudo apt install apt-transport-https ca-certificates curl software-properties-common
+> sudo apt-get install gnupg
+> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+> sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+> sudo apt update
+> sudo apt install docker-ce
+
+- Comprobar que Docker está instalado 
+> docker
+
+- Instalar npm y node
+> sudo apt install nodejs npm
+
+- Instalar Angular
+> npm i -g @angular/cli@16.2.12
+
+- Instalar nvm
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+> nvm install 16.14
+> nvm use 16.14
+
+- Descargar Git.
+> sudo apt-get install git
+
+
+
 - Descargar Apache.
 > sudo apt-get install apache2 mariadb-server \
 > mysql_secure_installation \
 (Yes, yes, yes, no, no, yes) \
 > apt install php libapache2-mod-php php-mysql phpmyadmin \
 (Yes)
-- Descargar Docker.
-> sudo apt install apt-transport-https ca-certificates curl software-properties-common \
-> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
-> sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" \
-> sudo apt update \
-> sudo apt install docker-ce \
-- Descargar Git.
-> sudo apt-get install git
 
 # Listado de comandos que han de ejecutarse para poder acceder al proyecto
-- git clone https://github.com/Elardillo2002/Coffee
-- ng serve
-- cd Coffee
-- docker compose up -d
+> git clone https://github.com/Elardillo2002/Coffee
+> cd Coffee
+> docker compose up -d
+> docker start coffee-pgadmin-1
+> docker start coffee-db-1
+> npm i
+> ng serve
 
 # NVM
 Instalación: https://github.com/coreybutler/nvm-windows/releases
