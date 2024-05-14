@@ -53,8 +53,6 @@
             <div id="ID{{item.dishId}}">
                 <input [(ngModel)]="item.name" type="text" name="name" (blur)="dishChanges(item)">
                 <input [(ngModel)]="item.date" type="date" name="date" (blur)="dishChanges(item)">
-                <input [(ngModel)]="item.name" type="text" name="name" (blur)="dishChanges(item)">
-                <input [(ngModel)]="item.date" type="date" name="date" (blur)="dishChanges(item)">
                 <select [(ngModel)]="item.type" name="type" (blur)="dishChanges(item)">
                     <option value="First"> {{ "cafeteria.starters" | translate }} </option>
                     <option value="Second"> {{ "cafeteria.entrees" | translate }} </option>
@@ -66,8 +64,6 @@
         </article>
         <article *ngFor="let item of second; let i = index">
             <div id="ID{{item.dishId}}">
-                <input [(ngModel)]="item.name" type="text" name="name" (blur)="dishChanges(item)">
-                <input [(ngModel)]="item.date" type="date" name="date" (blur)="dishChanges(item)">
                 <input [(ngModel)]="item.name" type="text" name="name" (blur)="dishChanges(item)">
                 <input [(ngModel)]="item.date" type="date" name="date" (blur)="dishChanges(item)">
                 <select [(ngModel)]="item.type" name="type" (blur)="dishChanges(item)">
@@ -116,32 +112,6 @@
                 </select>
                 <input [(ngModel)]="newPrice" type="text" name="price">
                 <button (click)="addDish()"><i class="fa-solid fa-check pointer"></i></button>
-            </div>
-        </article>
-    </section>
-    <section *ngIf="addMode">
-        <h3>{{ "cafeteria.menuEditing" | translate }}</h3>
-        <article>
-            <div>
-                <p><b> {{ "cafeteria.dishName" | translate }} </b></p>
-                <p><b> {{ "cafeteria.serviceDate" | translate }} </b></p>
-                <p><b> {{ "cafeteria.dishType" | translate }} </b></p>
-                <p><b> {{ "cafeteria.price" | translate }} </b></p>
-                <p> </p>
-                <p (click)="add()"><i class="fa-regular fa-circle-xmark" style="color: black; font-size: 24px;"></i></p>
-            </div>
-        </article>
-        <article>
-            <div>
-                <input [(ngModel)]="newName" type="text" name="name">
-                <input [(ngModel)]="newDate" type="date" name="date" min={{date}}>
-                <select [(ngModel)]="newType" name="type">
-                    <option value="First"> {{ "cafeteria.starters" | translate }} </option>
-                    <option value="Second"> {{ "cafeteria.entrees" | translate }} </option>
-                    <option value="Poke"> {{ "cafeteria.poke" | translate }} </option>
-                </select>
-                <input [(ngModel)]="newPrice" type="text" name="price">
-                <button (click)="addDish()"><i class="fa-solid fa-check"></i></button>
             </div>
         </article>
     </section>

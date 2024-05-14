@@ -29,4 +29,8 @@ systemctl restart networking
 
 - Instalar dependencias de proyecto angular
 > docker run --rm -v /root/Coffee:/app bitnami/node npm install
-> docker run --rm -v /root/Coffee:/app bitnami/node npm start
+> docker run -v /root/Coffee:/app -p 4200:4200 bitnami/node npx ng serve --port 4200 --host 0.0.0.0
+
+- Lanzar los contenedores docker
+> docker start root-pgadmin-1
+> docker start root-db-1
